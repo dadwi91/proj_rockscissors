@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Project Janken</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <h1>Project Rock Scissors</h1>
+        <div class="player">
+            <p>Choose your action:</p>
+            <select id="player_act">
+                <option value="rock">Rock</option>
+                <option value="scissors">Scissors</option>
+                <option value="paper">Paper</option>
+            </select>
+        </div>
+
+        <p></p>
+
+        <button type="button" class="btn btn-danger" onclick="playFunction()">Start Playing!</button>
+        <script src="comp.js"></script>   
+        <script>     
+        function playFunction(){
+        com_act = comAction();
+
+        var p_id = document.getElementById("player_act");
+        var p_action = p_id.options[p_id.selectedIndex].value;
+
+            if(p_action === "paper"){
+                if(com_act === "rock"){
+                    alert("You are win!");
+                }
+                else if(com_act === "scissors"){
+                    alert("You are lose!");   
+                    }
+                else{
+                    alert("Draw!");
+                }
+
+            }
+            if(p_action === "rock"){
+                if(com_act === "scissors"){
+                    alert("You are win!");
+                }else if(com_act === "paper"){
+                    alert("You are lose!");   
+                }else{
+                    alert("Draw!");
+                }
+
+            }
+            if(p_action === "scissors"){
+                if(com_act === "paper"){
+                    alert("You are win!");
+                } else if(com_act === "rock"){
+                    alert("You are lose!");   
+                } else{
+                    alert("Draw!");
+                }
+
+            }
+        }
+        </script>                 
+    </body>
+</html>
